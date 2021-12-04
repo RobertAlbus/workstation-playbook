@@ -1,0 +1,7 @@
+# Bootstrap workstation stuff
+- hosts: localhost
+  vars_files: user_vars.yml
+  become: yes
+  become_user: "{{ username }}"
+  roles:
+    - dependencies

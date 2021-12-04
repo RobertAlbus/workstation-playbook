@@ -1,0 +1,16 @@
+---
+- name: Install npm
+  become_user: root
+  pacman:
+    name:
+      - npm
+      - nvm
+- name: Check if global npm folder exists
+  stat:
+    path: "/home/{{ username }}/.npm_global"
+  register: global_npm_folder
+- name: Create NPM global packages directory in home directory
+  command: mkdir /home/{{ username }}/.npm_global
+  when: not global_npm_folder.stat.exists
+- name: Configure NPM global packages install directory
+  command: npm config set prefix '/home/{{ username }}/.npm_global'

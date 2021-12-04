@@ -1,0 +1,7 @@
+---
+- name: Install dependencies that are needed for subsequent steps
+  become_user: root
+  pacman:
+    name:
+      - dtrx
+      - debtap
