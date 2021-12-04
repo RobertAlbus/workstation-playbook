@@ -5,3 +5,4 @@
   become_user: "{{ username }}"
   roles:
     - dependencies
+    - dev-tools

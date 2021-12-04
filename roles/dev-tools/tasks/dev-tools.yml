@@ -1,0 +1,26 @@
+---
+- name: Install AWS cli tools
+  become_user: root
+  pacman:
+    name: 
+      - aws-cdk
+      - aws-cli
+- name: Install IDEs
+  become_user: root
+  pacman:
+    name: 
+      - code
+      - pycharm-community-edition
+- name: Install Hugo Extended
+  become_user: root
+  pacman:
+    name: 
+      - code
+      - pycharm-community-edition
+- name: Install Hugo Extended Version
+  become_user: root
+  ansible.builtin.unarchive:
+    src: https://github.com/gohugoio/hugo/releases/download/v0.89.4/hugo_extended_0.89.4_Linux-64bit.tar.gz
+    dest: /bin
+    remote_src: yes
+

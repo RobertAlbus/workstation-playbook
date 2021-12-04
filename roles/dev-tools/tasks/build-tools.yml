@@ -1,0 +1,12 @@
+---
+- name: Install build tools
+  become_user: root
+  pacman:
+    name:
+      # - python-pipenv
+      # - python-pip-whl
+      - curl
+      - wget
+      - docker
+
+

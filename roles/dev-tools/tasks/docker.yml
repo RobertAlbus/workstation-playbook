@@ -1,0 +1,14 @@
+# ---
+# - name: Check if docker group exists
+#   command: getent group docker
+#   register: docker_group_exists
+# - name: Add docker group
+#   become_user: root
+#   command: groupadd docker
+#   when: docker_group_exists.rc == 1
+# - name: Add user to docker group
+#   become_user: root
+#   command: usermod -aG docker {{ username }}
+#   when: docker_group_exists.rc == 1
+# - name: Change user group to docker
+#   command: newgrp docker
