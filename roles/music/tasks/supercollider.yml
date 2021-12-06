@@ -1,0 +1,7 @@
+---
+- name: Install supercollider
+  become_user: root
+  pacman:
+    name:
+      - supercollider
+      - sc3-plugins

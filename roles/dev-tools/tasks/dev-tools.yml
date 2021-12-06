@@ -11,12 +11,6 @@
     name: 
       - code
       - pycharm-community-edition
-- name: Install Hugo Extended
-  become_user: root
-  pacman:
-    name: 
-      - code
-      - pycharm-community-edition
 - name: Install Hugo Extended Version
   become_user: root
   ansible.builtin.unarchive:

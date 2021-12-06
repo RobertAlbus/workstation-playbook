@@ -1,0 +1,10 @@
+---
+- name: Install audio packages
+  become_user: root
+  pacman:
+    name:
+      - pasystray
+      - qjackctl
+
+
+

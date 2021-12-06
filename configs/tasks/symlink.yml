@@ -1,0 +1,6 @@
+- name: Create a symbolic link
+  ansible.builtin.file:
+    force: yes
+    src: "{{playbook_dir}}/configs/test/symlinkrc"
+    dest: ~/.symlinkrc
+    state: link
